@@ -1,0 +1,89 @@
+                                              Assignment On ExceptionHandling
+                                             ==================================
+1. Write a Java program that throws an exception and catch it using a try-catch block.
+public class Ex1 {
+	public void show() throws ArithmeticException
+	{
+		int a=1/0;
+		System.out.println("inside show method");
+	}
+
+	public static void main(String[] args) {
+		Ex1 obj=new Ex1();
+		try {
+			obj.show();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}
+output:
+java.lang.ArithmeticException: / by zero
+	at oops.Ex1.show(Ex1.java:6)
+	at oops.Ex1.main(Ex1.java:13)
+.................................................................................................................................
+2. Write a Java program to create a method that takes an integer as a parameter and throws an exception if the number is odd.
+import java.util.Scanner;
+
+public class Odd {
+	public void show()
+	{
+		int a;
+		System.out.println("enter a number:");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		if(n%2!=0)
+		{
+			throw new ArithmeticException("the number is odd");
+		}
+		else
+		{
+			System.out.println("the number is even");
+		}
+	}
+
+	public static void main(String[] args) {
+		Odd obj=new Odd();
+		obj.show();
+		
+
+	}
+
+}
+output:
+enter a number:
+45
+Exception in thread "main" java.lang.ArithmeticException: the number is odd
+	at oops.Odd.show(Odd.java:14)
+	at oops.Odd.main(Odd.java:24)
+...............................................................................................................
+4.Throw an exception if age is below 18 (print "Access denied"). If age is 18 or older, print "Access granted".
+public class Ex5 {
+	public void show()
+	{
+		int age=15;
+		if(age<18)
+		{
+			throw new ArithmeticException("access denied");
+		}
+		else
+		{
+			System.out.println("access granted");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+          Ex5 obj=new Ex5();
+          obj.show();
+	}
+
+}
+output:
+Exception in thread "main" java.lang.ArithmeticException: access denied
+	at oops.Ex5.show(Ex5.java:9)
+	at oops.Ex5.main(Ex5.java:20)
